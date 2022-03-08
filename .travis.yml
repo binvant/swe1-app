@@ -14,7 +14,7 @@ before_script:
   - python manage.py collectstatic --noinput
 
 script:
-  - black swe1-app --check .
+  - black --check .
   - flake8 .
   - coverage run --source='.' manage.py test
 
