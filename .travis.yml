@@ -18,5 +18,5 @@ script:
   - flake8 .
   - coverage run --source='.' manage.py test
 
-after_script:
+after_success:
   - coveralls
