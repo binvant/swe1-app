@@ -1,12 +1,13 @@
 language: python
+
 python:
-  - "3.8"
-  - "3.9"
+  - 3.9
 
 install:
   - pip install -r requirements.txt
   - pip install black
   - pip install flake8
+  - pip install coverage
   - pip install coveralls
 
 before_script:
@@ -16,7 +17,7 @@ before_script:
 script:
   - black --check .
   - flake8 .
-  - coverage run --source=polls manage.py test
+  - coverage run --source='.' manage.py test
 
-after_script:
+after_success:
   - coveralls
